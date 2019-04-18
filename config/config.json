@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "city_faves",
+    "database": "city_faves_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

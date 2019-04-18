@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   city.associate = function(models) {
     // associations can be defined here
+    models.city.belongsToMany(models.traveler, { through: models.citiesTravelers })
   };
   return city;
 };

@@ -1,0 +1,13 @@
+<h1>Here are all the Travelers!</h1>
+
+<% if (travelers.length) { %>
+  <ul>
+    <% travelers.forEach(traveler=>{ %>
+      <li><%= traveler.firstname %> <%= traveler.lastname %></li>
+    <% }) %>
+  </ul>
+  <p>Don't see yourself? <a href="/travelers/new">Create a new Traveller Here!</a></p>
+<% } else { %>
+  <h5>There are no travelers at the moment.</h5>
+  <a href="/travelers/new">Create a new Traveller Here!</a>
+<% } %>
