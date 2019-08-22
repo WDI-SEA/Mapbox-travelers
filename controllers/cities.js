@@ -12,7 +12,14 @@ const mb = mbClient({ accessToken: mapboxKey })
 const geocode = mbGeocode(mb)
 
 router.get('/search', (req, res)=>{
-  res.render('cities/search')
+  db.traveler.findAll()
+  .then(travelers=>{
+    res.render('cities/search', { travelers })
+  })
+  .catch(err=>{
+    console.log(err)
+    res.render('404')
+  })
 })
 
 router.get('/results', (req, res)=>{
@@ -37,7 +44,7 @@ router.get('/results', (req, res)=>{
           long: city.center[0]
         }
       })
-      res.render('cities/results', { results })
+      res.render('cities/results', { results, travelerId: req.query.travelerId })
     })
     .catch(err=>{
       console.log(err)
@@ -82,6 +89,15 @@ router.post('/faves', (req, res)=>{
   .spread((city, created)=>{
     if(created){
       console.log('Created '+city.name)
+    }
+    if (req.body.travelerId > 0) {
+      db.traveler.findByPk(req.body.travelerId)
+      .then(traveler=>{
+        city.addTraveler(traveler)
+        .then(associatedTraveler=>{
+          console.log(associatedTraveler)
+        })
+      })
     }
     res.redirect('/cities/faves')
   })

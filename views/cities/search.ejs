@@ -3,5 +3,11 @@
 <form method="GET" action="/results">
   <input type="text" name="name" placeholder="Insert City Name">
   <input type="text" name="state" placeholder="Insert State">
+  <select name="travelerId">
+    <% travelers.forEach(traveler=>{ %>
+      <option value="<%= traveler.id %>"><%= traveler.firstname %> <%= traveler.lastname %></option>
+    <% }) %>
+      <option value="-1">No Traveler</option>
+  </select>
   <input type="submit" value="Search">
 </form>
