@@ -1,0 +1,21 @@
+<h1>Search results for: <%= query.city.toUpperCase() %>,<%= query.state.toUpperCase() %></h1>
+
+<hr>
+
+<h2>Name: <%= results[0].name %> </h2>
+<h3>Longitude: <%= results[0].long %> </h3>
+<h3>Latitude: <%= results[0].lat %> </h3>
+
+<hr>
+
+
+<form method="POST" action="/add">
+    <h2>Add to your favorites:  <button type="submit">Add! ❤️</button> </h2>  
+    <input type="hidden" name="city" value="<%= query.city.toUpperCase() %>">
+    <input type="hidden" name="state" value="<%= query.state.toUpperCase() %>">
+    <input type="hidden" name="lat" value="<%= results[0].long %>">
+    <input type="hidden" name="long" value="<%= results[0].lat %>">
+</form>
+
+<input type="submit" value="&larr; Back to Search"></input>
+
