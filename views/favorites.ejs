@@ -1,5 +1,11 @@
 <h1>FAVORITES</h1>
 
+<%if(favorites.length === 0) {%>
+    <h2>No favorites yet.</h2>
+    <h3>Search now to add to your favorites!</h3>
+    <a href="/search"><button class="search-btn">Search</button></a> 
+
+<%}%>
 
 <%favorites.forEach(favorite => {%>
 <h2><%=favorite.city%>, <%=favorite.state%></h2>
