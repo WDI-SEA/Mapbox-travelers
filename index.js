@@ -11,11 +11,6 @@ app.use(express.static("static"))
 //add method override middleware
 app.use(methodOverride('_method'))
 
-
-app.get('/', (req, res)=>{
-  res.render('home')
-})
-
-app.use('/', require('./routes/city-search'))
+app.use('/', require('./controllers/city-search'))
 
 app.listen(process.env.PORT || 8000, console.log('🎧 Port 8000 🎧'))
