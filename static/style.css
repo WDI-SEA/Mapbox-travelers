@@ -1,3 +1,37 @@
+body, html {
+    text-align: center;
+    font-family: "Arial";
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 3em;
+    text-decoration: none;
+    padding-right: 1em;
+    padding-left: 1em;
+    color: black;
+}
+
+nav a:hover {
+    text-decoration: underline grey;
+    color: grey;
+}
+
 input {
-    padding: 20em;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+input[type="submit"] {
+    border: 0.05em solid grey;
+    background-color: rgba(128, 128, 128, 0.185);
+    padding: 0.4em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    border: 0.05em solid rgba(128, 128, 128, 0.452);
+    background-color: rgba(255, 255, 255, 0.924);
+    color: green;
 }
