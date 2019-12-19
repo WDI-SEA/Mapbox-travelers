@@ -1,0 +1,16 @@
+<h2>Results</h2>
+
+<% results.forEach(result => { %>
+    <div>
+        <h4><%= result.name %></h4>
+        <p>(<%= result.lat %>, <%= result.long %>)</p>
+        <form action="/add" method="post">
+            <input type="hidden" name="city" value = "<%= result.city %>"
+            <input type="hidden" name="lat" value="<%= result.lat %>">
+            <input type="hidden" name="long" value="<%= result.long %>">
+
+            <input type="submit" value="Add to faves">
+        </form>
+    </div>
+    <hr />
+<% }) %>
