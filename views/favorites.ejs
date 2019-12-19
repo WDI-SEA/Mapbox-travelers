@@ -1,0 +1,12 @@
+<h1>These are my favs:</h1>
+
+<% places.forEach( place => { %>
+    <h2><%= place.city %>, <%= place.state %> </h2>
+    <p>( <%= place.lat %>, <%= place.long %> )</p>
+    <form method="POST" action="/remove?_method=DELETE">
+        <input type="hidden" value="<%= place.city %>" name="city">
+        <button type="submit">Remove From Favorites 😵💔</button>
+    </form>
+    
+    <hr>
+<% }) %>

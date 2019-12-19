@@ -46,4 +46,19 @@ router.post('/add', (req, res) => {
     })
 })
 
+router.get('/favorites', (req, res) => {
+    db.place.findAll()
+    .then(places => {
+        res.render('favorites', {places})
+    })
+})
+
+router.delete('/remove', (req, res) => {
+    db.place.destroy({
+        where: { city: req.body.city }
+    }).then(function() {
+        res.redirect('/favorites')
+    });
+})
+
 module.exports = router
