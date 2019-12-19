@@ -5,7 +5,7 @@
     <p>( <%= place.lat %>, <%= place.long %> )</p>
     <form method="POST" action="/remove?_method=DELETE">
         <input type="hidden" value="<%= place.city %>" name="city">
-        <button type="submit">Remove From Favorites 😵💔</button>
+        <input type="submit" value="Remove From Favorites 😵💔"></input>
     </form>
     
     <hr>
