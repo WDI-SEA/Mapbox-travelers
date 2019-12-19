@@ -11,4 +11,6 @@ app.get('/', (req, res)=>{
   res.render('home')
 })
 
+// app.use('/', require('./routes/cities'))
+
 app.listen(process.env.PORT || 8000, console.log('🎧 Port 8000 🎧'))

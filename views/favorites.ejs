@@ -1,0 +1,8 @@
+<h2>These are my favorite cities:</h2>
+
+<% cities.forEach(city => { %>
+    <h4><%= city.city %></h4>
+    <form method="POST" action="/favorites">
+        <input type="submit" method="method-override" action="/remove" value="Remove">
+    </form>
+<% }) %>

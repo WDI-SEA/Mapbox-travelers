@@ -1,0 +1,18 @@
+<h2>Search results for<%= query.city %>, <%= query.state %></h2>
+
+<% results.forEach(result => { %>
+    <div>
+        <h4><%= result.city %></h4>
+        <p>(<%= result.lat %>, <%= result.long %></p>
+        <form action="/add" method="POST">
+            <input type="hidden" name="city" value="<%= result.city %>">
+            <input type="hidden" name="lat" value="<%= result.lat %>">
+            <input type="hidden" name="long" value="<%= result.long %>">
+
+            <input type="submit" value="Add to Faves">
+        </form>
+        <hr>
+    </div>
+<% }) %>
+
+<button method="GET" action="/">Back to Search</button>
