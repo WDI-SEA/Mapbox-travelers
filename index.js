@@ -5,7 +5,7 @@ let ejsLayouts = require('express-ejs-layouts')
 app.use(ejsLayouts);
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static("static"));
+app.use(express.static("static")); //links static folder for formaating, add this
 //add method override middleware
 
 app.get('/', (req, res)=>{
