@@ -36,7 +36,7 @@ router.get('/results', (req, res) => {
 })
 
 router.post('/add', (req, res) => {
-    db.geocode.findOrCreate({
+    db.place.findOrCreate({
         where: {
             city: req.body.city,
             state: req.body.state
@@ -49,6 +49,9 @@ router.post('/add', (req, res) => {
     .then(({city, create}) => {
         res.redirect('/favorites')
     })
+    .catch(err => {
+        res.render('404') 
+    })
 })
 
 router.get('/favorites', (req, res) => {
@@ -57,7 +60,7 @@ router.get('/favorites', (req, res) => {
         res.render('cities/favorites', { cities })
     })
     .catch(err => {
-        res.render('error') // But vague for user
+        res.render('404') 
     })
 })
 

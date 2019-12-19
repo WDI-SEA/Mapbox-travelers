@@ -1,5 +1,9 @@
 <h2>Your Favorite Cities Are:</h2>
 
-<div>
-    <h1><%= city %></h1>
-</div>
+
+<% cities.forEach(c => { %>
+    <div>
+        <h1><%= c.city %></h1>
+    </div>
+<% }) %>
+
