@@ -1,0 +1,10 @@
+<h2>I love these places unconditionally and it's actually unhealthy.</h2>
+
+<% cities.forEach(city => { %>
+    <h4><%= city.city %></h4>
+    <form method="POST" action="/delete/<%= city.id %>?_method=DELETE">
+        <input type="hidden" name="city" value="<%= city.city %>">
+        <input type="hidden" name="id" value="<%= city.id %>">
+        <input type="button" value="Remove from Favorites">
+    </form>
+<% }) %>
