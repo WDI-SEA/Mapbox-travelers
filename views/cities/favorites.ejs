@@ -4,6 +4,15 @@
 <% cities.forEach(c => { %>
     <div>
         <h1><%= c.city %></h1>
+        <form action="/delete" method="method-override">
+            <input type="hidden" name="city" value="<%= c.city %>">
+            <input type="hidden" name="state" value="<%= c.state %>">
+            <input type="hidden" name="lat" value="<%= c.lat %>">
+            <input type="hidden" name="long" value="<%= c.long %>">
+
+            <input type="submit" value="Remove from faves">
+        </form>
+        <hr>
     </div>
 <% }) %>
 

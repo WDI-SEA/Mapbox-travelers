@@ -64,4 +64,14 @@ router.get('/favorites', (req, res) => {
     })
 })
 
+router.delete('/delete', (req, res) => {
+    db.place.findByPk()
+    .then ((cities) => {
+        res.render('cities/favorites', { cities })
+    })
+    .catch(err => {
+        res.render('404') 
+    })
+})
+
 module.exports = router
