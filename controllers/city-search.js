@@ -34,4 +34,16 @@ router.get('/search', (req, res) => {
     })
 })
 
+router.post('/add', (req, res) => {
+    db.place.findOrCreate({
+        where: {
+            city: req.body.city
+        },
+        defaults: req.body
+    })
+    .then(([place, created]) => {
+        res.redirect('/favorites')
+    })
+})
+
 module.exports = router
