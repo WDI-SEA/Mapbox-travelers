@@ -24,7 +24,7 @@ We'll use the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#g
 * Locate your Access Token - this will be the same for all Mapbox APIs
 
 ### Set up
-* Create a new node project called `geocode-example`.
+* Run `npm install`.
 * Install the [@mapbox/mapbox-sdk](https://github.com/mapbox/mapbox-sdk-js) node module via `npm`.
 * In `mapTest.js` file, import the geocoder from the mapbox module and set up a geocoding client using your access token [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#geocoding).
 
