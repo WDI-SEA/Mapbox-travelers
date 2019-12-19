@@ -1,0 +1,18 @@
+<h1> Search results for <%=query.city%>, <%=query.state%></h1>
+
+<a href="/"><button>&larr; Back to Search</button></a>
+<% results.forEach(result => {%>
+    <div>
+        <h2><%=result.name%></h2>
+        <h3><%=result.city%>, <%=result.state%> </h3>
+        <p>Coordinates: <%=result.lat%>,<%=result.long%></p>
+        <form method="POST" action="/add">
+            <input type="hidden" name="city" value="<%=result.city%>">
+            <input type="hidden" name="state" value="<%=result.state%>">
+            <input type="hidden" name="lat" value="<%=result.lat%>">
+            <input type="hidden" name="long" value="<%=result.long%>">
+            <input type="submit" value="Add to Favorites 🤍" class="favorite-btn">
+        </form>
+    </div>
+<%})%>
+<a href="/"><button>&larr; Back to Search</button></a>

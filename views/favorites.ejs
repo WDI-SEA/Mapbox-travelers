@@ -1,0 +1,11 @@
+<h1>FAVORITES</h1>
+
+
+<%favorites.forEach(favorite => {%>
+<h2><%=favorite.city%>, <%=favorite.state%></h2>
+
+<form action="/remove/<%=favorite.id%>/?_method=DELETE" method="POST">
+    <button type="submit">Remove from Favorites</button>
+</form>
+
+<%})%>
