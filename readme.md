@@ -23,9 +23,10 @@ We'll use the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#g
 * Head to the [mapbox sign up page](https://www.mapbox.com/signup/?route-to=%22/account/%22) and make an account.
 * Locate your Access Token - this will be the same for all Mapbox APIs
 
+We'll be using [@mapbox/mapbox-sdk](https://github.com/mapbox/mapbox-sdk-js) node module via `npm`.
+
 ### Set up
 * Run `npm install`.
-* Install the [@mapbox/mapbox-sdk](https://github.com/mapbox/mapbox-sdk-js) node module via `npm`.
 * In `mapTest.js` file, import the geocoder from the mapbox module and set up a geocoding client using your access token [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#geocoding).
 
 ```js
