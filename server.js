@@ -1,14 +1,25 @@
-let express = require('express')
-let app = express()
-let ejsLayouts = require('express-ejs-layouts')
+// Requirements
+let express = require('express');
+let ejsLayouts = require('express-ejs-layouts');
 
+// Environmental setup
+const PORT = process.env.PORT || 8000;
+
+// App setup
+let app = express();
+
+// Middleware
 app.use(ejsLayouts);
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static("static"));
+app.use(express.static('public'));
 
+// Routes
 app.get('/', (req, res)=>{
-  res.render('home')
-})
+  res.render('home');
+});
 
-app.listen(process.env.PORT || 8000, console.log('🎧 Port 8000 🎧'))
+app.get('/*', (req, res) => res.render('404'));
+
+// Server init
+app.listen(PORT, console.log(`🎧 Listening at Port: ${PORT} 🎧`));
